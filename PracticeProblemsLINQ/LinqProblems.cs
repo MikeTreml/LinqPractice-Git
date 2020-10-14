@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace PracticeProblemsLINQ
@@ -89,12 +91,22 @@ namespace PracticeProblemsLINQ
         //Expected output: 86.125
         public static double RunProblem5(List<string> classGrades)
         {
-           
-            
+            List<int> newClassGrades = new List<int>();
             //code
+            foreach(string i in classGrades)
+            {
+                List<int> grades = i.Split(',').Select(m => int.Parse(m)).ToList();
+                grades.Remove(grades.Min(g => g));
+                foreach(int g in grades)
+                {
+                    newClassGrades.Add(g);
+                }
+            }
+            double classAverage = newClassGrades.Average();
+
 
             //return
-            
+            return classAverage;
         }
         #endregion
 
@@ -104,28 +116,38 @@ namespace PracticeProblemsLINQ
         //and returns an alphabetically ordered string corresponding to the letter frequency(i.e. "E1I1L2R2T1")
         public static string RunBonusProblem1(string word)
         {
-        //code
-        string palWord = Console.ReadLine();
-        int backwards = palWord.Length - 1;
-        for (int i = 0; i < palWord.Length; i++)
-        {
-            if (palWord[i] == palWord[backwards])
+            StringBuilder build = new StringBuilder();
+            //code
+            List<char> chars = word.ToCharArray().OrderBy(m => m).ToList();
+
+
+            while (chars.Count() > 0)
             {
-                backwards--;
-                if (backwards < i)
-                {
-                    Console.Write("is a Palindrome");
-                    break;
-                }
+                build.Append(chars.Count(m => m == chars[0]));
+                build.Append(chars[0]);
+                char temp = chars[0];
+                chars.RemoveAll(a => a == temp);
             }
-            else
-            {
-                Console.Write("not a Palindrome");
-                break;
-            }
-        }
-        //return
-        return "";
+
+
+            //for (int i = 0; i < chars.Length; i++)
+            //{
+            //    if (i < (chars.Length - 1) && chars[i] == chars[i + 1])
+            //    {
+            //        count++;
+            //    }
+            //    else
+            //    {
+            //        count++;
+            //        build.Append(chars[i]);
+            //        build.Append(count);
+            //        count = 0;
+            //    }
+            //}
+           
+            string letters = Convert.ToString(build).ToUpper();
+            //return
+            return letters;
         }
         #endregion
     }
