@@ -123,8 +123,8 @@ namespace PracticeProblemsLINQ
 
             while (chars.Count() > 0)
             {
-                build.Append(chars.Count(m => m == chars[0]));
                 build.Append(chars[0]);
+                build.Append(chars.Count(m => m == chars[0]));
                 char temp = chars[0];
                 chars.RemoveAll(a => a == temp);
             }
