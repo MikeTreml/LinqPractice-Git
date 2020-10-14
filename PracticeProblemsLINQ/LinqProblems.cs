@@ -60,7 +60,8 @@ namespace PracticeProblemsLINQ
             //code
             Customer name = customers.Find(m => m.FirstName == "Mike");
             //return
-            return customers[0];
+            Console.WriteLine($"{name.Id} {name.FirstName} {name.LastName}");
+            return name;
         }
         #endregion
 
@@ -98,10 +99,6 @@ namespace PracticeProblemsLINQ
                 List<int> grades = i.Split(',').Select(m => int.Parse(m)).ToList();
                 grades.Remove(grades.Min(g => g));
                 newClassGrades.Add(grades.Average());
-                //foreach (int g in grades)
-                //{
-                //    newClassGrades.Add(g);
-                //}
             }
          
             //return
