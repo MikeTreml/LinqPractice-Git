@@ -18,7 +18,8 @@ namespace PracticeProblemsLINQ
         {
             List<string> result = new List<string>();
             //code
-
+            result = words.Where(s => words.Contains("th")).ToList();
+           
             //return
             return result;
         }
