@@ -91,22 +91,21 @@ namespace PracticeProblemsLINQ
         //Expected output: 86.125
         public static double RunProblem5(List<string> classGrades)
         {
-            List<int> newClassGrades = new List<int>();
+            List<double> newClassGrades = new List<double>();
             //code
             foreach(string i in classGrades)
             {
                 List<int> grades = i.Split(',').Select(m => int.Parse(m)).ToList();
                 grades.Remove(grades.Min(g => g));
-                foreach(int g in grades)
-                {
-                    newClassGrades.Add(g);
-                }
+                newClassGrades.Add(grades.Average());
+                //foreach (int g in grades)
+                //{
+                //    newClassGrades.Add(g);
+                //}
             }
-            double classAverage = newClassGrades.Average();
-
-
+         
             //return
-            return classAverage;
+            return newClassGrades.Average();
         }
         #endregion
 
