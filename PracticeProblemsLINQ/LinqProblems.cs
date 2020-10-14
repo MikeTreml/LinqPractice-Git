@@ -21,7 +21,7 @@ namespace PracticeProblemsLINQ
             List<string> result = new List<string>();
             //code
             result = words.Where(w => w.Contains("th")).ToList();
-         //  result = words.Where(s => words.Contains("th")).ToList();
+         
            
             //return
             foreach(string i in result)
@@ -40,6 +40,7 @@ namespace PracticeProblemsLINQ
             List<string> result = new List<string>();
             //code
             result = names.Distinct().ToList();
+          
             //return
             foreach (string i in result)
             {
@@ -59,8 +60,7 @@ namespace PracticeProblemsLINQ
             //code
             Customer name = customers.Find(m => m.FirstName == "Mike");
             //return
-            Console.WriteLine($"{name.Id} {name.FirstName} {name.LastName}");
-            return name;
+            return customers[0];
         }
         #endregion
 
