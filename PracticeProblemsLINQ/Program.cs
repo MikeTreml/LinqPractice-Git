@@ -40,12 +40,13 @@ namespace PracticeProblemsLINQ
                 "73,88,83,99,64",
                 "98,100,66,74,55"
             };
+            Console.WriteLine(LinqProblems.RunProblem5(classGrades));
 
 
             //--------------------
             //Bonus Problem 1
             string letters = "terrill";
-
+            Console.WriteLine(LinqProblems.RunBonusProblem1(letters));
 
             Console.ReadLine();
         }

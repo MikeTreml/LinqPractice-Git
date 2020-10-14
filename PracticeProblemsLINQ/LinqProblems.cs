@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace PracticeProblemsLINQ
@@ -89,10 +91,22 @@ namespace PracticeProblemsLINQ
         //Expected output: 86.125
         public static double RunProblem5(List<string> classGrades)
         {
+            List<int> newClassGrades = new List<int>();
             //code
+            foreach(string i in classGrades)
+            {
+                List<int> grades = i.Split(',').Select(m => int.Parse(m)).ToList();
+                grades.Remove(grades.Min(g => g));
+                foreach(int g in grades)
+                {
+                    newClassGrades.Add(g);
+                }
+            }
+            double classAverage = newClassGrades.Average();
+
 
             //return
-            return 1;
+            return classAverage;
         }
         #endregion
 
@@ -102,10 +116,38 @@ namespace PracticeProblemsLINQ
         //and returns an alphabetically ordered string corresponding to the letter frequency(i.e. "E1I1L2R2T1")
         public static string RunBonusProblem1(string word)
         {
+            StringBuilder build = new StringBuilder();
             //code
+            List<char> chars = word.ToCharArray().OrderBy(m => m).ToList();
 
+
+            while (chars.Count() > 0)
+            {
+                build.Append(chars.Count(m => m == chars[0]));
+                build.Append(chars[0]);
+                char temp = chars[0];
+                chars.RemoveAll(a => a == temp);
+            }
+
+
+            //for (int i = 0; i < chars.Length; i++)
+            //{
+            //    if (i < (chars.Length - 1) && chars[i] == chars[i + 1])
+            //    {
+            //        count++;
+            //    }
+            //    else
+            //    {
+            //        count++;
+            //        build.Append(chars[i]);
+            //        build.Append(count);
+            //        count = 0;
+            //    }
+            //}
+           
+            string letters = Convert.ToString(build).ToUpper();
             //return
-            return "";
+            return letters;
         }
         #endregion
     }
