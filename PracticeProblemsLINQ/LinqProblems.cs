@@ -54,11 +54,11 @@ namespace PracticeProblemsLINQ
         //Using LINQ, write a method that takes in a list of customers and returns the lone customer who has the name of Mike. 
         public static Customer RunProblem3(List<Customer> customers)
         {
-            Customer name = customers.Where(w => w.FirstName.Contains("Mike"));
+            
             //code
-            //  Customer name = customers.Where(m => m.FirstName == "Mike");
+            Customer name = customers.Find(m => m.FirstName == "Mike");
             //return
-            return name;
+            return customers[0];
         }
         #endregion
 
@@ -69,11 +69,14 @@ namespace PracticeProblemsLINQ
         public static Customer RunProblem4(List<Customer> customers)
         {
 
-           
             //code
+            Customer name = customers.Find(m => m.Id == 3);
+            name.FirstName = "Lebron";
+            name.LastName = "James";
+            Console.WriteLine($"{name.Id} {name.FirstName} {name.LastName}");
 
             //return
-            return customers[0];
+            return name;
 
         }
         #endregion
