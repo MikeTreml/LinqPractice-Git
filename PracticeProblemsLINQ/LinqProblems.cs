@@ -120,18 +120,14 @@ namespace PracticeProblemsLINQ
             //code
             List<char> chars = word.ToCharArray().OrderBy(m => m).ToList();
 
-
             while (chars.Count() > 0)
             {
                 build.Append(chars[0]);
                 build.Append(chars.Count(m => m == chars[0]));
-                char temp = chars[0];
-                chars.RemoveAll(a => a == temp);
+                chars.RemoveAll(a => a == chars[0]);
             }
 
-            string letters = Convert.ToString(build).ToUpper();
-            //return
-            return letters;
+            return Convert.ToString(build).ToUpper();
         }
         #endregion
     }
