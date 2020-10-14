@@ -51,10 +51,12 @@ namespace PracticeProblemsLINQ
         //Using LINQ, write a method that takes in a list of customers and returns the lone customer who has the name of Mike. 
         public static Customer RunProblem3(List<Customer> customers)
         {
+            Customer customer = new Customer(1, "Mike", "Terril");
             //code
-            Customer name = customers.Where(m => m.FirstName == "Mike");
+            var name = customers.Where(m => m.FirstName == "Mike");
             //return
-            return name;
+
+            return customer;
         }
         #endregion
 
