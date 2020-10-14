@@ -89,28 +89,12 @@ namespace PracticeProblemsLINQ
         //Expected output: 86.125
         public static double RunProblem5(List<string> classGrades)
         {
-            double average;
-            double minNumber;
-            double[] avageStudent;
-            string[] values;
-            double totalNumber;
-
-            for (int i = 0; i < classGrades.Count; i++)
-            {
-                values = classGrades[i].Split(',').Select(sValue => sValue.Trim()).ToArray();
-                minNumber = values.Min(str => double.Parse(str));
-                totalNumber= values.Select(x => x.Count()).Sum();
-                
-                avageStudent.Add(totalNumber - minNumber) / values.Len);
-            }
            
-            
-
             
             //code
 
             //return
-            return 1;
+            
         }
         #endregion
 
