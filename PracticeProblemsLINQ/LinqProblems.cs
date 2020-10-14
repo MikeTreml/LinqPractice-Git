@@ -89,6 +89,24 @@ namespace PracticeProblemsLINQ
         //Expected output: 86.125
         public static double RunProblem5(List<string> classGrades)
         {
+            double average;
+            double minNumber;
+            double[] avageStudent;
+            string[] values;
+            double totalNumber;
+
+            for (int i = 0; i < classGrades.Count; i++)
+            {
+                values = classGrades[i].Split(',').Select(sValue => sValue.Trim()).ToArray();
+                minNumber = values.Min(str => double.Parse(str));
+                totalNumber= values.Select(x => x.Count()).Sum();
+                
+                avageStudent.Add(totalNumber - minNumber) / values.Len);
+            }
+           
+            
+
+            
             //code
 
             //return
@@ -102,10 +120,28 @@ namespace PracticeProblemsLINQ
         //and returns an alphabetically ordered string corresponding to the letter frequency(i.e. "E1I1L2R2T1")
         public static string RunBonusProblem1(string word)
         {
-            //code
-
-            //return
-            return "";
+        //code
+        string palWord = Console.ReadLine();
+        int backwards = palWord.Length - 1;
+        for (int i = 0; i < palWord.Length; i++)
+        {
+            if (palWord[i] == palWord[backwards])
+            {
+                backwards--;
+                if (backwards < i)
+                {
+                    Console.Write("is a Palindrome");
+                    break;
+                }
+            }
+            else
+            {
+                Console.Write("not a Palindrome");
+                break;
+            }
+        }
+        //return
+        return "";
         }
         #endregion
     }
