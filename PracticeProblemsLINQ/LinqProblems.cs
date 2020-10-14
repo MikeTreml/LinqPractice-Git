@@ -19,7 +19,7 @@ namespace PracticeProblemsLINQ
             List<string> result = new List<string>();
             //code
             result = words.Where(w => w.Contains("th")).ToList();
-         //  result = words.Where(s => words.Contains("th")).ToList();
+         
            
             //return
             foreach(string i in result)
@@ -38,6 +38,7 @@ namespace PracticeProblemsLINQ
             List<string> result = new List<string>();
             //code
             result = names.Distinct().ToList();
+          
             //return
             foreach (string i in result)
             {
@@ -53,10 +54,11 @@ namespace PracticeProblemsLINQ
         //Using LINQ, write a method that takes in a list of customers and returns the lone customer who has the name of Mike. 
         public static Customer RunProblem3(List<Customer> customers)
         {
+            Customer name = customers.Where(w => w.FirstName.Contains("Mike"));
             //code
-          //  Customer name = customers.Where(m => m.FirstName == "Mike");
+            //  Customer name = customers.Where(m => m.FirstName == "Mike");
             //return
-            return customers[0];
+            return name;
         }
         #endregion
 
