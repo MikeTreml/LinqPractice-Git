@@ -19,6 +19,8 @@ namespace PracticeProblemsLINQ
             List<string> result = new List<string>();
             //code
             result = words.Where(w => w.Contains("th")).ToList();
+            result = words.Where(s => words.Contains("th")).ToList();
+           
             //return
             foreach(string i in result)
             {
