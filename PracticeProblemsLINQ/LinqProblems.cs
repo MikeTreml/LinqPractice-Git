@@ -129,22 +129,6 @@ namespace PracticeProblemsLINQ
                 chars.RemoveAll(a => a == temp);
             }
 
-
-            //for (int i = 0; i < chars.Length; i++)
-            //{
-            //    if (i < (chars.Length - 1) && chars[i] == chars[i + 1])
-            //    {
-            //        count++;
-            //    }
-            //    else
-            //    {
-            //        count++;
-            //        build.Append(chars[i]);
-            //        build.Append(count);
-            //        count = 0;
-            //    }
-            //}
-           
             string letters = Convert.ToString(build).ToUpper();
             //return
             return letters;
