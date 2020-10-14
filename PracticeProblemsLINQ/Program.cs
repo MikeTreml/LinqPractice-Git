@@ -12,11 +12,11 @@ namespace PracticeProblemsLINQ
         {
             //Problem 1
             List<string> words = new List<string>() { "the", "bike", "this", "it", "tenth", "mathematics" };
-
+            LinqProblems.RunProblem1(words);
 
             //Problem 2
             List<string> names = new List<string>() { "Mike", "Brad", "Nevin", "Ian", "Mike" };
-
+            LinqProblems.RunProblem2(names);
 
             //Problem 3 & Problem 4
             List<Customer> customers = new List<Customer>()
@@ -26,6 +26,7 @@ namespace PracticeProblemsLINQ
                 new Customer(3, "Jason", "Ryan"),
                 new Customer(4, "Dan", "Laffey")
             };
+            
 
 
             //Problem 5
@@ -43,8 +44,7 @@ namespace PracticeProblemsLINQ
             string letters = "terrill";
 
 
-            
-
+            Console.ReadLine();
         }
     }
 }
