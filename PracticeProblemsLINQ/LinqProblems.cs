@@ -16,10 +16,11 @@ namespace PracticeProblemsLINQ
         //Using LINQ, write a method that takes in a list of strings and returns all words that contain the substring “th” from a list.
         public static List<string> RunProblem1(List<string> words)
         {
+            List<string> result = new List<string>();
             //code
 
             //return
-
+            return result;
         }
         #endregion
 
@@ -28,9 +29,11 @@ namespace PracticeProblemsLINQ
         //Using LINQ, write a method that takes in a list of strings and returns a copy of the list without duplicates.
         public static List<string> RunProblem2(List<string> names)
         {
+            List<string> result = new List<string>();
             //code
 
             //return
+            return result;
 
         }
         #endregion
@@ -40,10 +43,11 @@ namespace PracticeProblemsLINQ
         //Using LINQ, write a method that takes in a list of customers and returns the lone customer who has the name of Mike. 
         public static Customer RunProblem3(List<Customer> customers)
         {
+           
             //code
 
             //return
-
+            return customers[0];
         }
         #endregion
 
@@ -53,9 +57,12 @@ namespace PracticeProblemsLINQ
         //Then, update that customer's first name and last name to completely different names and return the newly updated customer from the method.
         public static Customer RunProblem4(List<Customer> customers)
         {
+
+           
             //code
 
             //return
+            return customers[0];
 
         }
         #endregion
@@ -71,7 +78,7 @@ namespace PracticeProblemsLINQ
             //code
 
             //return
-
+            return 1;
         }
         #endregion
 
@@ -84,7 +91,7 @@ namespace PracticeProblemsLINQ
             //code
 
             //return
-
+            return "";
         }
         #endregion
     }
