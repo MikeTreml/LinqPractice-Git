@@ -19,7 +19,7 @@ namespace PracticeProblemsLINQ
             List<string> result = new List<string>();
             //code
             result = words.Where(w => w.Contains("th")).ToList();
-            result = words.Where(s => words.Contains("th")).ToList();
+         //  result = words.Where(s => words.Contains("th")).ToList();
            
             //return
             foreach(string i in result)
@@ -54,9 +54,9 @@ namespace PracticeProblemsLINQ
         public static Customer RunProblem3(List<Customer> customers)
         {
             //code
-            Customer name = customers.Where(m => m.FirstName == "Mike");
+          //  Customer name = customers.Where(m => m.FirstName == "Mike");
             //return
-            return name;
+            return customers[0];
         }
         #endregion
 
